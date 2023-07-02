@@ -1,10 +1,7 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
 import "./index.css";
 import { Nav } from "../components/nav";
 
 function App() {
-  const [count, setCount] = useState<number>(0);
 
   return (
     <div className="grid grid-cols-12 grid-rows-1 h-screen">

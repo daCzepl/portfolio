@@ -1,4 +1,3 @@
-import React from 'react'
 import { BsTwitter,BsGithub,BsLinkedin,BsInstagram } from 'react-icons/bs'
 
 const socials = [{
