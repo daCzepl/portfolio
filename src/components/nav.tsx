@@ -1,5 +1,7 @@
 import { NavItem } from "./nav-item";
 import { Socials } from "./socials";
+
+
 const navlinks = [
   {
     name: "About",
@@ -20,9 +22,12 @@ const navlinks = [
 ];
 
 export const Nav = () => {
+
+
+
   return (
     <div className="flex flex-col justify-between items-stretch text-center h-full pb-24 text-white">
-      <div className="text-white">Logo</div>
+      <NavItem name="Logo" path="/home" />
       <nav>
         <ul className="flex flex-col text-2xl ">
           {navlinks.map((link, index) => (

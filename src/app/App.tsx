@@ -1,22 +1,14 @@
-import { motion, AnimatePresence } from "framer-motion";
 import "./index.css";
 import { Nav } from "../components/nav";
-import { useEffect, useState } from "react";
-
-const textVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
-};
+import { Route, Routes, useLocation } from "react-router-dom";
+import { About } from "../pages/About";
+import { Skills } from "../pages/Skills";
+import { Projects } from "../pages/Projects";
+import { Contact } from "../pages/Contact";
+import { Home } from "../pages/Home";
 
 function App() {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    setVisible(true);
-  }, []);
-
-  const text = "Hi,\nI'm Stefan\nsoftware developer";
-  const textArray = text.split("\n");
+  const location = useLocation();
 
   return (
     <div className="grid grid-cols-12 grid-rows-1 h-screen">
@@ -24,26 +16,14 @@ function App() {
         <Nav />
       </div>
       <div className="col-span-11 bg-neutral-800">
-        <div className="text-white flex h-full items-center px-12">
-          <h1>
-            {textArray.map((line, index) => (
-              <AnimatePresence key={index}>
-                {visible && (
-                  <motion.div
-                    className="text-7xl"
-                    variants={textVariants}
-                    initial="hidden"
-                    animate="visible"
-                    transition={{ type: "spring", stiffness: 100, damping: 20, delay: index * 0.25 }}
-                  >
-                    {line}
-                    <br />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            ))}
-          </h1>
-        </div>
+        <Routes location={location} key={location.pathname}>
+          <Route index element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </div>
     </div>
   );
