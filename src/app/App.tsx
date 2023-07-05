@@ -34,7 +34,7 @@ function App() {
                     variants={textVariants}
                     initial="hidden"
                     animate="visible"
-                    transition={{ delay: index * 0.75, duration: 2 }}
+                    transition={{ type: "spring", stiffness: 100, damping: 20, delay: index * 0.25 }}
                   >
                     {line}
                     <br />
