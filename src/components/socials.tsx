@@ -12,7 +12,7 @@ const socials = [{
 },
 {
     name: 'instagram',
-    path: '/projects',
+    path: 'https://www.instagram.com/daczepl/',
     icon: <BsInstagram />
 },
 {
