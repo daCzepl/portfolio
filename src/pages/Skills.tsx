@@ -1,8 +1,7 @@
-
 export const Skills = () => {
   return (
-    <div className="text-white flex h-full items-center px-12">
-      Skills
+    <div className="bg-neutral-800">
+      <div className="text-white flex h-full items-center px-12">Skills</div>
     </div>
   );
 };

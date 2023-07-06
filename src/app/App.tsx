@@ -1,6 +1,5 @@
 import "./index.css";
 import { Nav } from "../components/nav";
-import { Route, Routes, useLocation } from "react-router-dom";
 import { About } from "../pages/About";
 import { Skills } from "../pages/Skills";
 import { Projects } from "../pages/Projects";
@@ -8,22 +7,18 @@ import { Contact } from "../pages/Contact";
 import { Home } from "../pages/Home";
 
 function App() {
-  const location = useLocation();
 
   return (
-    <div className="grid grid-cols-12 grid-rows-1 h-screen">
-      <div className="col-span-1 bg-black">
+    <div className="grid grid-rows-6 h-screen bg-neutral-800">
+      <div className="row-span-1 ">
         <Nav />
       </div>
-      <div className="col-span-11 bg-neutral-800">
-        <Routes location={location} key={location.pathname}>
-          <Route index element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+      <div className="row-span-5">
+        <Home />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
       </div>
     </div>
   );

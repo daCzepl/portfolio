@@ -4,45 +4,51 @@ import { Socials } from "./socials";
 
 const navlinks = [
   {
-    name: "About",
+    name: "//\u00A0\u00A0home",
+    path: "/home",
+  },
+  {
+    name: "//\u00A0\u00A0about",
     path: "/about",
   },
   {
-    name: "Skills",
+    name: "//\u00A0\u00A0skills",
     path: "/skills",
   },
   {
-    name: "Projects",
+    name: "//\u00A0\u00A0projects",
     path: "/projects",
   },
   {
-    name: "Contact",
+    name: "//\u00A0\u00A0contact",
     path: "/contact",
   },
 ];
 
 export const Nav = () => {
-
-
-
   return (
-    <div className="flex flex-col justify-between items-stretch text-center h-full pb-24 text-white">
-      <NavItem name="Logo" path="/home" />
-      <nav>
-        <ul className="flex flex-col text-2xl ">
+    <div className="flex justify-between items-center text-center h-full pb-24 mx-12 text-white">
+      <div>
+        <h1>Stefan Czepl</h1>
+      </div>
+      <nav className="flex-grow">
+        <ul className="flex justify-center text-xl">
           {navlinks.map((link, index) => (
             <li
               key={index}
-              className={`${
-                index === navlinks.length - 1 ? "border-b-2" : ""
-              } pb-2 border-t-2`}
+              className={"pr-12"}
             >
-              <NavItem {...link} />
+              <NavItem index={index+1} {...link} />
             </li>
           ))}
         </ul>
       </nav>
-      <Socials />
+      <div>
+        <Socials />
+      </div>
     </div>
   );
 };
+
+
+

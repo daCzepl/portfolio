@@ -27,7 +27,7 @@ export const Socials = () => {
 
   return (
     <div className='mx-auto'>
-        <ul className='flex flex-row gap-x-4'>
+        <ul className='flex flex-row gap-x-4 text-xl'>
             {socials.map((link, index) => (
                 <a target='_blank' href={link.path} key={index} >{link.icon}</a>
             ))}
