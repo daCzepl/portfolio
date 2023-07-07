@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 interface WritingAnimationTextProps {
   children: ReactNode;
-  styling: string;
+  delay?: number;
 }
 
 const textVariants = {
@@ -12,43 +12,44 @@ const textVariants = {
 };
 
 export const WritingAnimationText: React.FC<WritingAnimationTextProps> = ({
-  children,styling
+  children,
+  delay = 0,
 }) => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setVisible(true);
-  }, []);
+    const timer = setTimeout(() => {
+      setVisible(true);
+    }, delay);
+    return () => clearTimeout(timer);
+  }, [delay]);
 
-   const textArray = React.Children.toArray(children).filter(
+  const textArray = React.Children.toArray(children).filter(
     (child): child is string => typeof child === "string"
   );
 
   return (
     <div>
-      <h1>
-        {textArray.map((line, index) => (
-          <AnimatePresence key={index}>
-            {visible && (
-              <motion.div
-                className={styling}
-                variants={textVariants}
-                initial="hidden"
-                animate="visible"
-                transition={{
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 20,
-                  delay: index * 0.25,
-                }}
-              >
-                {line}
-                <br />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        ))}
-      </h1>
+      {textArray.map((line, index) => (
+        <AnimatePresence key={index}>
+          {visible && (
+            <motion.div
+              variants={textVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 20,
+                delay: index * 0.25,
+              }}
+            >
+              {line}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      ))}
     </div>
   );
 };
+
