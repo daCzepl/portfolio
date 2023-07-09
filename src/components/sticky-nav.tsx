@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { NavItem } from "./nav-item";
-import { Socials } from "./socials";
 
 const navlinks = [
   {
@@ -25,15 +24,12 @@ const navlinks = [
   },
 ];
 
-export const Nav = () => {
+export const StickyNav = () => {
   const [hoveredIndex, setHoveredIndex] = useState(-1);
 
   return (
-    <div className="flex justify-between items-center text-center h-full pb-24 mx-12 text-white mt-6">
-      <div>
-        <h1>Stefan Czepl</h1>
-      </div>
-      <nav className="flex-grow">
+    <div className="fixed w-full bg-neutral-800 text-light-blue">
+      <nav className="flex justify-center text-xl">
         <ul className="flex justify-center text-xl">
           {navlinks.map((link, index) => (
             <li
@@ -46,14 +42,12 @@ export const Nav = () => {
                 index={index + 1}
                 grayOut={hoveredIndex !== index && hoveredIndex !== -1}
                 {...link}
+                textColour="text-light-blue"
               />
             </li>
           ))}
         </ul>
       </nav>
-      <div>
-        <Socials />
-      </div>
     </div>
   );
 };

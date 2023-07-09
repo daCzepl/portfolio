@@ -1,17 +1,31 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 interface NavItemProps {
   index: number;
   name: string;
   path: string;
+  grayOut: boolean;
+  textColour?: string;
 }
 
-export const NavItem: React.FC<NavItemProps> = ({ index, name, path }) => {
+export const NavItem: React.FC<NavItemProps> = ({
+  index,
+  name,
+  path,
+  grayOut,
+  textColour = "text-white",
+}) => {
   return (
-    <div className="flex flex-col items-end">
+    <div
+      className={`flex flex-col items-end ${grayOut ? "text-gray-400" : ""}`}
+    >
       <p className="text-sm text-gray-400">0{index}</p>
-      <Link className="-mt-2" to={path}>{name}</Link>
+      <a
+        className={`-mt-2 ${grayOut ? "text-gray-400" : { textColour }}`}
+        href={`#${path}`}
+      >
+        {name}
+      </a>
     </div>
   );
-}; 
+};

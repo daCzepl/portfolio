@@ -52,4 +52,3 @@ export const WritingAnimationText: React.FC<WritingAnimationTextProps> = ({
     </div>
   );
 };
-
