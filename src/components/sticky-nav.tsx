@@ -28,7 +28,7 @@ export const StickyNav = () => {
   const [hoveredIndex, setHoveredIndex] = useState(-1);
 
   return (
-    <div className="fixed w-full bg-neutral-800 text-light-blue">
+    <div className="fixed w-full bg-neutral-800 pt-1 pb-5 backdrop-blur-sm bg-opacity-80">
       <nav className="flex justify-center text-xl">
         <ul className="flex justify-center text-xl">
           {navlinks.map((link, index) => (
@@ -43,6 +43,7 @@ export const StickyNav = () => {
                 grayOut={hoveredIndex !== index && hoveredIndex !== -1}
                 {...link}
                 textColour="text-light-blue"
+                blurOutColour="text-light-blue/50"
               />
             </li>
           ))}

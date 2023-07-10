@@ -46,6 +46,8 @@ export const Nav = () => {
                 index={index + 1}
                 grayOut={hoveredIndex !== index && hoveredIndex !== -1}
                 {...link}
+                textColour="text-white"
+                blurOutColour="text-white/50"
               />
             </li>
           ))}

@@ -6,6 +6,7 @@ interface NavItemProps {
   path: string;
   grayOut: boolean;
   textColour?: string;
+  blurOutColour?: string;
 }
 
 export const NavItem: React.FC<NavItemProps> = ({
@@ -14,14 +15,13 @@ export const NavItem: React.FC<NavItemProps> = ({
   path,
   grayOut,
   textColour = "text-white",
+  blurOutColour = "text-white/50",
 }) => {
   return (
-    <div
-      className={`flex flex-col items-end ${grayOut ? "text-gray-400" : ""}`}
-    >
-      <p className="text-sm text-gray-400">0{index}</p>
+    <div className={`flex flex-col items-end ${grayOut ? blurOutColour : ""}`}>
+      <p className={`text-sm ${blurOutColour}`}>0{index}</p>
       <a
-        className={`-mt-2 ${grayOut ? "text-gray-400" : { textColour }}`}
+        className={`-mt-2 ${grayOut ? blurOutColour : textColour}`}
         href={`#${path}`}
       >
         {name}
