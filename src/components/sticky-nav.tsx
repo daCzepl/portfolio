@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavItem } from "./nav-item";
+import { motion } from "framer-motion";
 
 const navlinks = [
   {
@@ -28,7 +29,12 @@ export const StickyNav = () => {
   const [hoveredIndex, setHoveredIndex] = useState(-1);
 
   return (
-    <div className="fixed w-full bg-neutral-800 pt-1 pb-5 backdrop-blur-sm bg-opacity-80">
+    <motion.div
+      className="fixed w-full bg-neutral-800 pt-1 pb-5 backdrop-blur-sm bg-opacity-80"
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ type: "spring", stiffness: 20, damping: 8 }}
+    >
       <nav className="flex justify-center text-xl">
         <ul className="flex justify-center text-xl">
           {navlinks.map((link, index) => (
@@ -49,6 +55,6 @@ export const StickyNav = () => {
           ))}
         </ul>
       </nav>
-    </div>
+    </motion.div>
   );
 };

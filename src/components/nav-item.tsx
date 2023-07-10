@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-scroll";
 
 interface NavItemProps {
   index: number;
@@ -20,12 +21,17 @@ export const NavItem: React.FC<NavItemProps> = ({
   return (
     <div className={`flex flex-col items-end ${grayOut ? blurOutColour : ""}`}>
       <p className={`text-sm ${blurOutColour}`}>0{index}</p>
-      <a
+      <Link
         className={`-mt-2 ${grayOut ? blurOutColour : textColour}`}
-        href={`#${path}`}
+        to={path}
+        smooth={true}
+        duration={500}
+        spy={true}
+        offset={-70}
+        activeClass="active"
       >
         {name}
-      </a>
+      </Link>
     </div>
   );
 };

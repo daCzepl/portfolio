@@ -1,7 +1,7 @@
 export const About = () => {
   return (
     <div className="bg-neutral-800 h-screen" id="about">
-      <div className="text-white h-full flex px-12">
+      <div className="text-white h-full items-center flex px-12">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
           lacinia massa nec mauris condimentum, ac aliquet est fermentum.
