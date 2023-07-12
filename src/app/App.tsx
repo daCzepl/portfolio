@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className="bg-neutral-800">
-      {isScrolled && <StickyNav />}
+      <div className="hidden lg:block">{isScrolled && <StickyNav />}</div>
       <div className={`grid grid-rows-6 h-screen ${isScrolled ? "pt-12" : ""}`}>
         <div className="row-span-1">
           <Nav />

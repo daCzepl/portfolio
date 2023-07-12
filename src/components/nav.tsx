@@ -43,7 +43,7 @@ export const Nav = () => {
             <div className="text-xl">Stefan Czepl </div>
           </div>
           {/*NavLinks*/}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <nav className="flex-grow">
               <ul className="flex justify-center text-xl">
                 {navlinks.map((link, index) => (
@@ -66,7 +66,7 @@ export const Nav = () => {
             </nav>
           </div>
           {/*Hambuger Menue Button*/}
-          <div className="-mr-2 flex md:hidden">
+          <div className="-mr-2 flex lg:hidden">
             <button
               type="button"
               onClick={handleMenu}
@@ -75,25 +75,25 @@ export const Nav = () => {
               {menuOpen ? <AiOutlineClose size={30} /> : <FiMenu size={30} />}
             </button>
           </div>
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Socials />
           </div>
         </div>
       </div>
       {/* mobile-menue*/}
       {menuOpen ? (
-        <div className="md:hidden h-screen bg-white">
+        <div className="lg:hidden h-screen bg-white">
           <div className="pt-2 pb-3 space-y-1 sm:px-3">
             {navlinks.map((link, index) => (
               <a
                 key={index}
-                className={"flex p-1 rounded-md text-base font-medium"}
-                onClick={handleMenu}
+                className={"flex p-2 rounded-md text-base font-medium"}
               >
                 <NavItem
                   {...link}
                   textColour="text-black"
                   blurOutColour="text-black/50"
+                  onClick={handleMenu}
                 />
               </a>
             ))}

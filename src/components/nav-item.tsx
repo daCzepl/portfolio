@@ -10,16 +10,20 @@ interface NavItemProps {
   blurOutColour?: string;
 }
 
-export const NavItem: React.FC<NavItemProps> = ({
+export const NavItem: React.FC<NavItemProps & { onClick?: () => void }> = ({
   index = -1,
   name,
   path,
   grayOut = false,
   textColour = "text-white",
   blurOutColour = "text-white/50",
+  onClick,
 }) => {
   return (
-    <div className={`flex flex-col items-end ${grayOut ? blurOutColour : ""}`}>
+    <div
+      className={`flex flex-col items-end ${grayOut ? blurOutColour : ""}`}
+      onClick={onClick}
+    >
       <p className={`text-sm ${blurOutColour}`}>
         {index === -1 ? "" : `0${index}`}
       </p>
