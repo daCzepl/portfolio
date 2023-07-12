@@ -82,8 +82,8 @@ export const Nav = () => {
       </div>
       {/* mobile-menue*/}
       {menuOpen ? (
-        <div className="lg:hidden h-screen bg-white">
-          <div className="pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="fixed top-0 left-0 z-50 w-4/5 lg:hidden h-screen bg-white">
+          <div className="pt-12 pb-3 space-y-1 sm:px-3">
             {navlinks.map((link, index) => (
               <a
                 key={index}
