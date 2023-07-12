@@ -20,10 +20,7 @@ export const NavItem: React.FC<NavItemProps & { onClick?: () => void }> = ({
   onClick,
 }) => {
   return (
-    <div
-      className={`flex flex-col items-end ${grayOut ? blurOutColour : ""}`}
-      onClick={onClick}
-    >
+    <div className={`flex flex-col items-end ${grayOut ? blurOutColour : ""}`}>
       <p className={`text-sm ${blurOutColour}`}>
         {index === -1 ? "" : `0${index}`}
       </p>
@@ -35,6 +32,7 @@ export const NavItem: React.FC<NavItemProps & { onClick?: () => void }> = ({
         spy={true}
         offset={-70}
         activeClass="active"
+        onClick={onClick}
       >
         {name}
       </Link>
