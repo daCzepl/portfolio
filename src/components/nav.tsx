@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { NavItem } from "./nav-item";
 import { Socials } from "./socials";
+import { FiMenu } from "react-icons/fi";
+import { AiOutlineClose } from "react-icons/ai";
 
 const navlinks = [
   {
@@ -27,35 +29,77 @@ const navlinks = [
 
 export const Nav = () => {
   const [hoveredIndex, setHoveredIndex] = useState(-1);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleMenu = () => {
+    setMenuOpen((prev) => !prev);
+  };
 
   return (
-    <div className="flex justify-between items-center text-center h-full pb-24 mx-12 text-white mt-6">
-      <div>
-        <h1>Stefan Czepl</h1>
-      </div>
-      <nav className="flex-grow">
-        <ul className="flex justify-center text-xl">
-          {navlinks.map((link, index) => (
-            <li
-              key={index}
-              className={"pr-12"}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(-1)}
+    <div>
+      <div className="mt-8 pb-24 mx-12 text-center">
+        <div className="flex items-center justify-between text-white">
+          <div className="flex items-center">
+            <div className="text-xl">Stefan Czepl </div>
+          </div>
+          {/*NavLinks*/}
+          <div className="hidden md:block">
+            <nav className="flex-grow">
+              <ul className="flex justify-center text-xl">
+                {navlinks.map((link, index) => (
+                  <li
+                    key={index}
+                    className={"pr-12"}
+                    onMouseEnter={() => setHoveredIndex(index)}
+                    onMouseLeave={() => setHoveredIndex(-1)}
+                  >
+                    <NavItem
+                      index={index + 1}
+                      grayOut={hoveredIndex !== index && hoveredIndex !== -1}
+                      {...link}
+                      textColour="text-white"
+                      blurOutColour="text-white/50"
+                    />
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+          {/*Hambuger Menue Button*/}
+          <div className="-mr-2 flex md:hidden">
+            <button
+              type="button"
+              onClick={handleMenu}
+              className="inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2"
             >
-              <NavItem
-                index={index + 1}
-                grayOut={hoveredIndex !== index && hoveredIndex !== -1}
-                {...link}
-                textColour="text-white"
-                blurOutColour="text-white/50"
-              />
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <div>
-        <Socials />
+              {menuOpen ? <AiOutlineClose size={30} /> : <FiMenu size={30} />}
+            </button>
+          </div>
+          <div className="hidden md:block">
+            <Socials />
+          </div>
+        </div>
       </div>
+      {/* mobile-menue*/}
+      {menuOpen ? (
+        <div className="md:hidden h-screen bg-white">
+          <div className="pt-2 pb-3 space-y-1 sm:px-3">
+            {navlinks.map((link, index) => (
+              <a
+                key={index}
+                className={"flex p-1 rounded-md text-base font-medium"}
+                onClick={handleMenu}
+              >
+                <NavItem
+                  {...link}
+                  textColour="text-black"
+                  blurOutColour="text-black/50"
+                />
+              </a>
+            ))}
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 };

@@ -2,25 +2,27 @@ import React from "react";
 import { Link } from "react-scroll";
 
 interface NavItemProps {
-  index: number;
+  index?: number;
   name: string;
   path: string;
-  grayOut: boolean;
+  grayOut?: boolean;
   textColour?: string;
   blurOutColour?: string;
 }
 
 export const NavItem: React.FC<NavItemProps> = ({
-  index,
+  index = -1,
   name,
   path,
-  grayOut,
+  grayOut = false,
   textColour = "text-white",
   blurOutColour = "text-white/50",
 }) => {
   return (
     <div className={`flex flex-col items-end ${grayOut ? blurOutColour : ""}`}>
-      <p className={`text-sm ${blurOutColour}`}>0{index}</p>
+      <p className={`text-sm ${blurOutColour}`}>
+        {index === -1 ? "" : `0${index}`}
+      </p>
       <Link
         className={`-mt-2 ${grayOut ? blurOutColour : textColour}`}
         to={path}
