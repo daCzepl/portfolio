@@ -1,12 +1,12 @@
 import "./index.css";
-import { Nav } from "../components/nav";
+import { Nav } from "../components/nav/nav";
 import { About } from "../pages/About";
 import { Skills } from "../pages/Skills";
 import { Projects } from "../pages/Projects";
 import { Contact } from "../pages/Contact";
 import { Home } from "../pages/Home";
 import { useEffect, useState } from "react";
-import { StickyNav } from "../components/sticky-nav";
+import { StickyNav } from "../components/nav/sticky-nav";
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
