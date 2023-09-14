@@ -33,6 +33,7 @@ export const StickyNav = () => {
       className="fixed w-full bg-neutral-800 pt-1 pb-5 backdrop-blur-sm bg-opacity-80"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
+      exit={{ y: -100 }}
       transition={{ type: "spring", stiffness: 20, damping: 8 }}
     >
       <nav className="flex justify-center text-xl">

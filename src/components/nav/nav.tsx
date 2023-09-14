@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { NavItem } from "./nav-item";
 import { DektopNav } from "./desktop-nav";
 import { HamburgerButton } from "./hamburger-button";
 import { HamburgerNav } from "./hamburger-nav";

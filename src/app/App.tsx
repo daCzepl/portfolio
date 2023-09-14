@@ -7,12 +7,13 @@ import { Contact } from "../pages/Contact";
 import { Home } from "../pages/Home";
 import { useEffect, useState } from "react";
 import { StickyNav } from "../components/nav/sticky-nav";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const checkScroll = () => {
-    if (window.scrollY > window.innerHeight / 2) {
+    if (window.scrollY > window.innerHeight / 4) {
       setIsScrolled(true);
     } else {
       setIsScrolled(false);
@@ -26,8 +27,10 @@ function App() {
 
   return (
     <div className="bg-neutral-800">
-      <div className="hidden lg:block">{isScrolled && <StickyNav />}</div>
-      <div className={`grid grid-rows-6 h-screen ${isScrolled ? "pt-12" : ""}`}>
+      <div className="hidden lg:block">
+        <AnimatePresence>{isScrolled && <StickyNav />}</AnimatePresence>
+      </div>
+      <div className="grid grid-rows-6 h-screen">
         <div className="row-span-1">
           <Nav />
         </div>
