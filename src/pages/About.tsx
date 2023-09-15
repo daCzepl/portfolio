@@ -8,8 +8,8 @@ export const About = () => {
           I'm Stefan.
         </h1>
         <div className="grid grid-cols-2">
-          <div className="w-96 ml-28">
-            <img src={placeHolder} alt="Image" />
+          <div className="w-96 ml-28 overflow-hidden rounded-tl-full rounded-tr-full h-auto">
+            <img src={placeHolder} alt="Image" className="w-full h-auto" />
           </div>
           <div>
             <div className="mb-10">
@@ -18,7 +18,7 @@ export const About = () => {
                 Austria.
               </p>
             </div>
-            <div className="leading-relaxed text-lg md:text-xl lg:text-2xl max-w-2xl">
+            <div className="leading-relaxed text-lg md:text-xl lg:text-2xl max-w-3xl font-thin">
               <div className="mb-10">
                 <p>
                   I'm currently attending the 5th form of HTL Perg for Software
