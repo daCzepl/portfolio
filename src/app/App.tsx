@@ -8,6 +8,7 @@ import { Home } from "../pages/Home";
 import { useEffect, useState } from "react";
 import { StickyNav } from "../components/nav/sticky-nav";
 import { AnimatePresence } from "framer-motion";
+import bgImage from "../assets/home_background.jpg";
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,7 +31,10 @@ function App() {
       <div className="hidden lg:block">
         <AnimatePresence>{isScrolled && <StickyNav />}</AnimatePresence>
       </div>
-      <div className="grid grid-rows-6 h-screen">
+      <div
+        className="grid grid-rows-6 h-screen bg-bottom bg-no-repeat bg-cover"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      >
         <div className="row-span-1">
           <Nav />
         </div>

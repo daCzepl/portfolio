@@ -2,7 +2,7 @@ import placeHolder from "../assets/placeholder_image.jpg";
 
 export const About = () => {
   return (
-    <div className="bg-neutral-800 h-screen" id="about">
+    <div className="bg-neutral-800 h-screen pt-10" id="about">
       <div className="text-white h-full items-center flex px-12 flex-col">
         <h1 className="text-3xl md:text-5xl lg:text-7xl text-center mb-28 font-bold">
           I'm Stefan.
