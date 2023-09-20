@@ -2,7 +2,7 @@ import placeHolder from "../assets/placeholder_image.jpg";
 
 export const About = () => {
   return (
-    <div className="bg-neutral-800 h-screen pt-10" id="about">
+    <div className="bg-neutral-800 h-screen" id="about">
       <div className="text-white h-full items-center flex px-4 md:px-12 flex-col">
         <h1 className="text-3xl md:text-5xl lg:text-7xl text-center mb-10 md:mb-28 font-bold">
           I'm Stefan.
@@ -25,9 +25,9 @@ export const About = () => {
             <div className="leading-relaxed text-lg md:text-xl lg:text-2xl max-w-full md:max-w-3xl font-thin">
               <div className="mb-6 md:mb-10">
                 <p>
-                  I'm currently attending the 5th form of HTL Perg for Software
-                  Engineering. I have worked on various projects which you can
-                  find under the Projects section.
+                  I'm currently attending the 5th of the colleague of software
+                  engineering in Perg. I have worked on various projects which
+                  you can find under the Projects section.
                 </p>
               </div>
               <p>

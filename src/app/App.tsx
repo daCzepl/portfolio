@@ -33,7 +33,9 @@ function App() {
       </div>
       <div
         className="grid grid-rows-6 h-screen bg-bottom bg-no-repeat bg-cover"
-        style={{ backgroundImage: `url(${bgImage})` }}
+        style={{
+          backgroundImage: `linear-gradient(to bottom, transparent 70%, rgb(38,38,38)) ,url(${bgImage})`,
+        }}
       >
         <div className="row-span-1">
           <Nav />
