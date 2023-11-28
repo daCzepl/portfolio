@@ -18,7 +18,7 @@ export const Skills = () => {
         <SkillsBox
           Icon={<BsDatabaseCheck />}
           headingBgClass="bg-database"
-          headingText="Database Engineering"
+          headingText="Test Engineering"
           paragraphText="Experienced in realational dmbs and designing databases using MYSQL, Oracle , MSSQLServer."
         />
         <SkillsBox
