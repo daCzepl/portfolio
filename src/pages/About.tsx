@@ -25,9 +25,9 @@ export const About = () => {
             <div className="leading-relaxed text-lg md:text-xl lg:text-2xl max-w-full md:max-w-3xl font-thin">
               <div className="mb-6 md:mb-10">
                 <p>
-                  I'm currently attending the 5th of the colleague of software
-                  engineering in Perg. I have worked on various projects which
-                  you can find under the Projects section.
+                  I'm currently attending the 5th form of the colleague of
+                  software engineering in Perg. I have worked on various
+                  projects which you can find under the Projects section.
                 </p>
               </div>
               <p>

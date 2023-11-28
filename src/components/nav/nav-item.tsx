@@ -21,9 +21,7 @@ export const NavItem: React.FC<NavItemProps & { onClick?: () => void }> = ({
 }) => {
   return (
     <div className={`flex flex-col items-end ${grayOut ? blurOutColour : ""}`}>
-      <p className={`text-sm ${blurOutColour}`}>
-        {index === -1 ? "" : `0${index}`}
-      </p>
+      <p className={`text-sm ${blurOutColour}`}>{index === -1 ? "" : `0${index}`}</p>
       <Link
         className={`-mt-2 ${grayOut ? blurOutColour : textColour}`}
         to={path}

@@ -2,5 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
+  font-family: "Roboto", sans-serif;
+}
+.bg-software {
+  padding: 0.1em 0.1em 0.15em 0.1em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 0, 255, 0) 0%,
+    rgba(255, 0, 255, 0) 16%,
+    rgba(255, 0, 255, 1) 16%,
+    rgba(255, 0, 255, 1) 41%,
+    rgba(255, 0, 255, 0) 41%
+  );
+}
+.bg-database {
+  padding: 0.1em 0.1em 0.15em 0.1em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 255, 0) 0%,
+    rgba(0, 0, 255, 0) 16%,
+    rgba(0, 0, 255, 1) 16%,
+    rgba(0, 0, 255, 1) 41%,
+    rgba(0, 0, 255, 0) 41%
+  );
+}
+.bg-app {
+  padding: 0.1em 0.1em 0.15em 0.1em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 165, 0, 0) 0%,
+    rgba(255, 165, 0, 0) 16%,
+    rgba(255, 165, 0, 1) 16%,
+    rgba(255, 165, 0, 1) 41%,
+    rgba(255, 165, 0, 0) 41%
+  );
 }
