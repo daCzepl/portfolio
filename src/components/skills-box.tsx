@@ -10,14 +10,14 @@ interface SkillsBoxProps {
 
 export const SkillsBox: React.FC<SkillsBoxProps> = ({ Icon, headingBgClass, headingText, paragraphText, className }) => {
   return (
-    <div className={`border-white px-6 py-8 border-t-4 border-b-4 border-r-2 ${className} w-[18vw] h-[20vw]`}>
-      <div className="flex items-center justify-start space-x-3 font-semibold">
-        <div className="text-lg md:text-xl lg:text-5xl">{Icon}</div>
-        <h1 className="text-lg md:text-xl lg:text-2xl text-left">
+    <div className={`border-white px-6 pt-8 pb-20 ${className} w-4/5 md:w-2/5 lg:w-2/5 2xl:w-[20%] h-80 flex flex-col justify-between`}>
+      <div className="flex items-center justify-start space-x-3 font-semibold ">
+        <div className="text-2xl md:text-3xl lg:text-5xl">{Icon}</div>
+        <h1 className="text-xl md:text-2xl lg:text-3xl text-left">
           <span className={headingBgClass}>{headingText}</span>
         </h1>
       </div>
-      <div className="text-left pt-12 font-medium text-lg">
+      <div className="text-left font-medium text-base md:text-lg lg:text-xl ">
         <p>{paragraphText}</p>
       </div>
     </div>

@@ -8,7 +8,7 @@ const socials = [
   },
   {
     name: "linkedin",
-    path: "https://www.linkedin.com/in/stefan-czepl-23b840281/",
+    path: "https://www.linkedin.com/in/stefan-czepl/",
     icon: <BsLinkedin />,
   },
   {
