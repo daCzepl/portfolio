@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavItem } from "./nav-item";
 import { motion } from "framer-motion";
+import { useCursorContext } from "../providers/CursorContext";
 
 const navlinks = [
   {
@@ -25,13 +26,9 @@ const navlinks = [
   },
 ];
 
-interface StickyNavProps {
-  enterHover: () => void;
-  exitHover: () => void;
-}
-
-export const StickyNav: React.FC<StickyNavProps> = ({ enterHover, exitHover }) => {
+export const StickyNav: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState(-1);
+  const { enterHover, exitHover } = useCursorContext();
 
   return (
     <motion.div

@@ -1,6 +1,7 @@
 import React from "react";
 import { NavItem } from "./nav-item";
 import { Socials } from "../socials";
+import { useCursorContext } from "../providers/CursorContext";
 
 interface DesktopNavProps {
   navlinks: {
@@ -11,19 +12,11 @@ interface DesktopNavProps {
   setHoveredIndex: (index: number) => void;
   textCoulor: string;
   blurOutColour: string;
-  enterHover: () => void;
-  exitHover: () => void;
 }
 
-export const DektopNav: React.FC<DesktopNavProps> = ({
-  navlinks,
-  hoveredIndex,
-  setHoveredIndex,
-  textCoulor,
-  blurOutColour,
-  enterHover,
-  exitHover,
-}) => {
+export const DektopNav: React.FC<DesktopNavProps> = ({ navlinks, hoveredIndex, setHoveredIndex, textCoulor, blurOutColour }) => {
+  const { enterHover, exitHover } = useCursorContext();
+
   return (
     <div className="flex items-center justify-between text-white">
       <div className="hidden items-center lg:flex">
@@ -58,7 +51,7 @@ export const DektopNav: React.FC<DesktopNavProps> = ({
         </nav>
       </div>
       <div className="hidden lg:block">
-        <Socials enterHover={enterHover} exitHover={exitHover} />
+        <Socials />
       </div>
     </div>
   );

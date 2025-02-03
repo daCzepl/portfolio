@@ -26,12 +26,7 @@ const navlinks = [
   },
 ];
 
-interface NavProps {
-  enterHover: () => void;
-  exitHover: () => void;
-}
-
-export const Nav: React.FC<NavProps> = ({ enterHover, exitHover }) => {
+export const Nav = () => {
   const [hoveredIndex, setHoveredIndex] = useState(-1);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -50,8 +45,6 @@ export const Nav: React.FC<NavProps> = ({ enterHover, exitHover }) => {
             setHoveredIndex={setHoveredIndex}
             textCoulor="text-white"
             blurOutColour="text-white/50"
-            exitHover={exitHover}
-            enterHover={enterHover}
           />
           {/*Hambuger Menue Button*/}
           <HamburgerButton menuOpen={menuOpen} handleMenu={handleMenu} />

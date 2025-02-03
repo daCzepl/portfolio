@@ -1,4 +1,5 @@
 import { BsTwitter, BsGithub, BsLinkedin, BsInstagram } from "react-icons/bs";
+import { useCursorContext } from "./providers/CursorContext";
 
 const socials = [
   {
@@ -23,17 +24,24 @@ const socials = [
   },
 ];
 
-interface SocialsPorps {
-  enterHover: () => void;
-  exitHover: () => void;
-}
+export const Socials: React.FC = () => {
+  const { enterHover, exitHover } = useCursorContext();
 
-export const Socials: React.FC<SocialsPorps> = ({ enterHover, exitHover }) => {
   return (
     <div className="mx-auto cursor-none">
       <ul className="flex flex-row gap-x-4 text-xl">
         {socials.map((link, index) => (
-          <a target="_blank" href={link.path} key={index} onMouseEnter={() => enterHover()} onMouseLeave={() => exitHover()}>
+          <a
+            target="_blank"
+            href={link.path}
+            key={index}
+            onMouseEnter={() => {
+              enterHover();
+            }}
+            onMouseLeave={() => {
+              exitHover();
+            }}
+          >
             {link.icon}
           </a>
         ))}
