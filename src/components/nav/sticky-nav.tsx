@@ -25,7 +25,12 @@ const navlinks = [
   },
 ];
 
-export const StickyNav = () => {
+interface StickyNavProps {
+  enterHover: () => void;
+  exitHover: () => void;
+}
+
+export const StickyNav: React.FC<StickyNavProps> = ({ enterHover, exitHover }) => {
   const [hoveredIndex, setHoveredIndex] = useState(-1);
 
   return (
@@ -42,8 +47,14 @@ export const StickyNav = () => {
             <li
               key={index}
               className={"pr-12"}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(-1)}
+              onMouseEnter={() => {
+                setHoveredIndex(index);
+                enterHover();
+              }}
+              onMouseLeave={() => {
+                setHoveredIndex(-1);
+                exitHover();
+              }}
             >
               <NavItem
                 index={index + 1}

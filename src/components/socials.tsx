@@ -23,12 +23,17 @@ const socials = [
   },
 ];
 
-export const Socials = () => {
+interface SocialsPorps {
+  enterHover: () => void;
+  exitHover: () => void;
+}
+
+export const Socials: React.FC<SocialsPorps> = ({ enterHover, exitHover }) => {
   return (
-    <div className="mx-auto">
+    <div className="mx-auto cursor-none">
       <ul className="flex flex-row gap-x-4 text-xl">
         {socials.map((link, index) => (
-          <a target="_blank" href={link.path} key={index}>
+          <a target="_blank" href={link.path} key={index} onMouseEnter={() => enterHover()} onMouseLeave={() => exitHover()}>
             {link.icon}
           </a>
         ))}

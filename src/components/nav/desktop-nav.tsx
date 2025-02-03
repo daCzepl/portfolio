@@ -11,6 +11,8 @@ interface DesktopNavProps {
   setHoveredIndex: (index: number) => void;
   textCoulor: string;
   blurOutColour: string;
+  enterHover: () => void;
+  exitHover: () => void;
 }
 
 export const DektopNav: React.FC<DesktopNavProps> = ({
@@ -19,6 +21,8 @@ export const DektopNav: React.FC<DesktopNavProps> = ({
   setHoveredIndex,
   textCoulor,
   blurOutColour,
+  enterHover,
+  exitHover,
 }) => {
   return (
     <div className="flex items-center justify-between text-white">
@@ -32,8 +36,14 @@ export const DektopNav: React.FC<DesktopNavProps> = ({
               <li
                 key={index}
                 className={"pr-12"}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(-1)}
+                onMouseEnter={() => {
+                  setHoveredIndex(index);
+                  enterHover();
+                }}
+                onMouseLeave={() => {
+                  setHoveredIndex(-1);
+                  exitHover();
+                }}
               >
                 <NavItem
                   index={index + 1}
@@ -48,7 +58,7 @@ export const DektopNav: React.FC<DesktopNavProps> = ({
         </nav>
       </div>
       <div className="hidden lg:block">
-        <Socials />
+        <Socials enterHover={enterHover} exitHover={exitHover} />
       </div>
     </div>
   );
