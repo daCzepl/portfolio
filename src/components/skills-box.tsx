@@ -17,7 +17,7 @@ export const SkillsBox: React.FC<SkillsBoxProps> = ({ Icon, headingBgClass, head
           <span className={headingBgClass}>{headingText}</span>
         </h1>
       </div>
-      <div className="text-left text-base md:text-lg flex flex-row  ">
+      <div className="text-left text-base md:text-lg flex flex-row ">
         <div className="text-sm text-gray-500 h-full flex flex-col justify-between  border-gray-500">
           <div>
             <p className="-mt-5">&lt;h3&gt;</p>
@@ -26,7 +26,7 @@ export const SkillsBox: React.FC<SkillsBoxProps> = ({ Icon, headingBgClass, head
             <p className="-mb-11">&lt;/h3&gt;</p>
           </div>
         </div>
-        <div className="border-2 border-y-0 border-r-0 -ml-5 pl-5 border-gray-500">
+        <div className="border-2 border-y-0 border-r-0 -ml-5 pl-5 border-gray-500 font-thin">
           <p>{paragraphText}</p>
         </div>
       </div>

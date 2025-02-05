@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  cursor: none;
+}
+
 body {
   font-family: "Roboto", sans-serif;
+  background-color: #262626;
 }
 .bg-software {
   padding: 0.1em 0.1em 0.15em 0.1em;

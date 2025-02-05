@@ -30,7 +30,7 @@ function App() {
 
   return (
     <CursorProvider>
-      <div className="bg-neutral-800 cursor-none">
+      <div className="bg-neutral-800 ">
         <Cursor />
         <div className="hidden lg:block">
           <AnimatePresence>{isScrolled && <StickyNav />}</AnimatePresence>
@@ -44,7 +44,7 @@ function App() {
           <div className="row-span-1">
             <Nav />
           </div>
-          <div className="row-span-5">
+          <div className="row-span-5 max-md:space-y-24">
             <Home />
             <About />
             <Skills />

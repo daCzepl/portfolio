@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useCursorContext } from "./providers/CursorContext";
 
 export const Cursor = () => {
-  const { mousePosition, innerCursorVariant, outerCursorVariant } = useCursorContext();
+  const { mousePosition, innerCursorVariant, outerCursorVariant, isTouchDevice } = useCursorContext();
   const variants = {
     innerCursorDefault: {
       x: mousePosition.x - 4,
@@ -22,6 +22,10 @@ export const Cursor = () => {
       transition: { type: "tween", duration: 0.0005 },
     },
   };
+
+  if (isTouchDevice) {
+    return null;
+  }
 
   return (
     <div>
