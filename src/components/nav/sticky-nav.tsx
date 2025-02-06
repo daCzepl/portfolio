@@ -57,8 +57,8 @@ export const StickyNav: React.FC = () => {
                 index={index + 1}
                 grayOut={hoveredIndex !== index && hoveredIndex !== -1}
                 {...link}
-                textColour="text-light-blue"
-                blurOutColour="text-light-blue/50"
+                textColour="text-light-grey"
+                blurOutColour="text-light-grey/50"
               />
             </li>
           ))}

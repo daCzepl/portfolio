@@ -30,7 +30,7 @@ function App() {
 
   return (
     <CursorProvider>
-      <div className="bg-neutral-800 ">
+      <div className="bg-neutral-800 font-sans">
         <Cursor />
         <div className="hidden lg:block">
           <AnimatePresence>{isScrolled && <StickyNav />}</AnimatePresence>
