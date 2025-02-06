@@ -32,7 +32,7 @@ export const StickyNav: React.FC = () => {
 
   return (
     <motion.div
-      className="fixed w-full bg-neutral-800 pt-1 pb-5 backdrop-blur-sm bg-opacity-80"
+      className="fixed w-full bg-neutral-800 pt-1 pb-5 backdrop-blur-sm bg-opacity-80 z-40"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       exit={{ y: -100 }}
