@@ -6,7 +6,7 @@ import CodeSample from "../assets/sample_code.png";
 
 export const Skills = () => {
   return (
-    <div className="bg-neutral-800 min-h-screen text-white relative pb-24" id="skills">
+    <div className="bg-neutral-800 min-h-screen text-white relative pb-24 mt-24" id="skills">
       <div className="text-3xl md:text-5xl lg:text-7xl text-center mb-14 font-bold font-aquire">MY SKILLS</div>
       <div className="flex flex-wrap justify-center md:justify-start 2xl:justify-center w-full px-4 relative z-10">
         <SkillsBox

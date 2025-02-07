@@ -2,7 +2,7 @@ import czepl from "../assets/Czepl.jpg";
 
 export const About = () => {
   return (
-    <div className="bg-neutral-800 min-h-screen" id="about">
+    <div className="bg-neutral-800" id="about">
       <div className="text-white h-full items-center flex px-4 md:px-12 flex-col justify-between">
         <h1 className="text-3xl md:text-5xl lg:text-7xl text-center mb-10 md:mb-28 font-bold font-aquire">I'M STEFAN</h1>
         <div className="sm:grid sm:grid-cols-1 md:grid-cols-2">

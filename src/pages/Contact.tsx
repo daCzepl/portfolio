@@ -1,8 +1,19 @@
+import { useNavigate } from "react-router-dom";
 import { useCursorContext } from "../components/providers/CursorContext";
 import { Socials } from "../components/socials";
 
 export const Contact = () => {
   const { enterHover, exitHover } = useCursorContext();
+
+  const navigate = useNavigate();
+
+  const openResume = () => {
+    window.open("/Czepl_Lebenslauf.pdf", "_blank");
+  };
+
+  const navTo = (route: string) => {
+    navigate(route);
+  };
 
   return (
     <div className="bg-neutral-900 text-white mt-12 p-10 grid grid-cols-2" id="contact">
@@ -28,10 +39,10 @@ export const Contact = () => {
       </div>
       <div className="flex items-end justify-end">
         <div className="flex flex-col lg:gap-x-12 max-lg:space-y-4 lg:flex-row">
-          <div className="hover:underline" onMouseEnter={enterHover} onMouseLeave={exitHover}>
+          <div className="hover:underline" onMouseEnter={enterHover} onMouseLeave={exitHover} onClick={openResume}>
             Resume
           </div>
-          <div className="hover:underline" onMouseEnter={enterHover} onMouseLeave={exitHover}>
+          <div className="hover:underline" onMouseEnter={enterHover} onMouseLeave={exitHover} onClick={() => navTo("/imprint")}>
             Imprint
           </div>
           <div className="hover:underline" onMouseEnter={enterHover} onMouseLeave={exitHover}>

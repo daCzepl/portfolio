@@ -14,7 +14,7 @@ export const Projects = () => {
   }, []);
 
   return (
-    <div className="bg-neutral-800 text-white min-h-screen" id="projects">
+    <div className="bg-neutral-800 text-white mt-32" id="projects">
       <div className="text-3xl md:text-5xl lg:text-7xl text-center mb-14 font-bold 2xl font-aquire">MY WORK</div>
       <div style={{ position: "relative" }} className="">
         <CircularGallery bend={bend} textColor="#ffffff" borderRadius={0.05} />
