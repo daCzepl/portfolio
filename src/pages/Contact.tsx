@@ -46,7 +46,7 @@ export const Contact = () => {
             Imprint
           </div>
           <div className="hover:underline" onMouseEnter={enterHover} onMouseLeave={exitHover}>
-            Pricacy
+            Privacy
           </div>
         </div>
       </div>
