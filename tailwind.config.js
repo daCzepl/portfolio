@@ -5,7 +5,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "light-blue": "#62CEE1", // Here is your color
+        "light-blue": "#62CEE1",
+        "light-grey": "#D3D3D3",
+        pink: "#b47dba",
+        "pastel-yellow": "#dec47e",
+        "pastel-blue": "#8bb9e0",
+      },
+      fontFamily: {
+        aquire: ["Aquire"],
+        sans: ["Geist"],
       },
     },
   },

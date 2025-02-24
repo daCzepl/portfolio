@@ -1,6 +1,7 @@
 import React from "react";
 import { NavItem } from "./nav-item";
 import { Socials } from "../socials";
+import { useCursorContext } from "../providers/CursorContext";
 
 interface DesktopNavProps {
   navlinks: {
@@ -13,13 +14,9 @@ interface DesktopNavProps {
   blurOutColour: string;
 }
 
-export const DektopNav: React.FC<DesktopNavProps> = ({
-  navlinks,
-  hoveredIndex,
-  setHoveredIndex,
-  textCoulor,
-  blurOutColour,
-}) => {
+export const DektopNav: React.FC<DesktopNavProps> = ({ navlinks, hoveredIndex, setHoveredIndex, textCoulor, blurOutColour }) => {
+  const { enterHover, exitHover } = useCursorContext();
+
   return (
     <div className="flex items-center justify-between text-white">
       <div className="hidden items-center lg:flex">
@@ -32,8 +29,14 @@ export const DektopNav: React.FC<DesktopNavProps> = ({
               <li
                 key={index}
                 className={"pr-12"}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(-1)}
+                onMouseEnter={() => {
+                  setHoveredIndex(index);
+                  enterHover();
+                }}
+                onMouseLeave={() => {
+                  setHoveredIndex(-1);
+                  exitHover();
+                }}
               >
                 <NavItem
                   index={index + 1}

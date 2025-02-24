@@ -51,14 +51,7 @@ export const Nav = () => {
         </div>
       </div>
       {/* mobile-menue*/}
-      {menuOpen ? (
-        <HamburgerNav
-          handleMenu={handleMenu}
-          navlinks={navlinks}
-          textCoulor="text-black"
-          blurOutColour="text-black/50"
-        />
-      ) : null}
+      {menuOpen ? <HamburgerNav handleMenu={handleMenu} navlinks={navlinks} textCoulor="text-black" blurOutColour="text-black/50" /> : null}
     </div>
   );
 };

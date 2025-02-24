@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavItem } from "./nav-item";
 import { motion } from "framer-motion";
+import { useCursorContext } from "../providers/CursorContext";
 
 const navlinks = [
   {
@@ -25,12 +26,13 @@ const navlinks = [
   },
 ];
 
-export const StickyNav = () => {
+export const StickyNav: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState(-1);
+  const { enterHover, exitHover } = useCursorContext();
 
   return (
     <motion.div
-      className="fixed w-full bg-neutral-800 pt-1 pb-5 backdrop-blur-sm bg-opacity-80"
+      className="fixed w-full bg-neutral-800 pt-1 pb-5 backdrop-blur-sm bg-opacity-80 z-40"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       exit={{ y: -100 }}
@@ -42,15 +44,21 @@ export const StickyNav = () => {
             <li
               key={index}
               className={"pr-12"}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(-1)}
+              onMouseEnter={() => {
+                setHoveredIndex(index);
+                enterHover();
+              }}
+              onMouseLeave={() => {
+                setHoveredIndex(-1);
+                exitHover();
+              }}
             >
               <NavItem
                 index={index + 1}
                 grayOut={hoveredIndex !== index && hoveredIndex !== -1}
                 {...link}
-                textColour="text-light-blue"
-                blurOutColour="text-light-blue/50"
+                textColour="text-pastel-blue"
+                blurOutColour="text-pastel-blue/50"
               />
             </li>
           ))}
